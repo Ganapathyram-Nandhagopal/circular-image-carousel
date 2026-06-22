@@ -2,6 +2,9 @@
 
 A modern circular image carousel built with HTML, CSS, and JavaScript. Features smooth rotational animations, 3D perspective effects, mouse wheel navigation, and elegant card transitions for a premium user experience.
 
+<img width="1352" height="606" alt="image" src="https://github.com/user-attachments/assets/69e1ccd0-ffc5-4097-9c5f-b8e1c59ace8d" />
+
+
 ## ✨ Features
 
 * 🎡 Circular Card Carousel Layout

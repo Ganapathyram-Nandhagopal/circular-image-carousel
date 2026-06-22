@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --card-w: 200px;
+  --card-h: 300px;
+  --radius: 750px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+/* Main Stage */
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+}
+
+/* Carousel Track */
+.carousel-track {
+  position: absolute;
+  top: 20%;
+  width: var(--card-w);
+  height: var(--card-h);
+  transform-style: preserve-3d;
+}
+
+/* Cards */
+.card {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  transform-origin: 50% var(--radius);
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.8s,
+    scale 0.8s;
+
+  filter: brightness(0.7);
+  scale: 0.8;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card.active {
+  filter: brightness(1);
+  scale: 1.1;
+  z-index: 10;
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.25),
+    0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Content Area */
+.content {
+  z-index: 20;
+  text-align: center;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 100;
+}
+
+.nav button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+  color: #333;
+
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 600;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.3s ease;
+}
+
+.nav button:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nav button:active {
+  transform: translateY(0);
+}
+
+/* Typography */
+h1,
+p,
+button {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
